@@ -1,24 +1,23 @@
-import { useState } from 'react';
-import './App.css';
+import React from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { BrowserRouter as Router } from "react-router-dom";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import WorkoutSessions from "./components/WorkoutSessions";
+import Footer from "./components/Footer";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Hello Vite + React!</p>
-        <p>
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Hero />
+      <WorkoutSessions />
+      <Footer />
+      <ToastContainer theme="dark" position="top-center" />
+    </Router>
   );
-}
+};
 
 export default App;
