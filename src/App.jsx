@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -34,5 +35,12 @@ const App = () => {
     </Router>
   );
 };
+=======
+import "./App.css";
+
+function App() {
+  return <></>;
+}
+>>>>>>> 322f6c0e9bebee003941862ded943c44efd8a89d
 
 export default App;
