@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import JournalEditor from "../views/Journal/JournalEditor";
 import TimelineView from "../Journal/TimeLineView";
 import EntryCard from "../Journal/EntryCard";
@@ -22,6 +22,18 @@ const JournalDashboard = () => {
 
   const [isAdding, setIsAdding] = useState(false);
   const [newEntry, setNewEntry] = useState("");
+
+  useEffect(() => {
+    // Apply dark theme to the body
+    document.body.style.backgroundColor = "#1a202c"; // Dark background
+    document.body.style.color = "#e2e8f0"; // Light text color
+
+    // Cleanup on component unmount
+    return () => {
+      document.body.style.backgroundColor = "";
+      document.body.style.color = "";
+    };
+  }, []);
 
   const handleAddEntry = () => {
     if (newEntry.trim() === "") return;
