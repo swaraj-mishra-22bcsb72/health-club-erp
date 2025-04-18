@@ -1,0 +1,9 @@
+/* Main content padding to account for fixed navbar */
+.main-content {
+  padding-top: 5rem; /* Adjust this value based on your navbar height */
+}
+
+/* Ensure the dashboard page takes full height */
+.dashboard-container {
+  min-height: calc(100vh - 5rem);
+}

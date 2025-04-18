@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const WorkoutSessions = () => {
-  const images = ["/img2.jpg", "/img3.jpg", "/img4.jpg", "/img5.jpg", "/img6.jpg", "/img7.jpg", "/img8.jpg"];
+  const images = ["/img2.jpg", "/img3.jpg", "/img4.jpg", "/img5</div>.jpg", "/img6.jpg", "/img7.jpg", "/img8.jpg"];
 
   const sliderSettings = {
     dots: true,

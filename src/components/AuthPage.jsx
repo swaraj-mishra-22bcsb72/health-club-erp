@@ -1,4 +1,5 @@
 import { useState } from "react";
+import GoogleSignIn from "./GoogleSignIn"; // Adjust the import path as needed
 
 const AuthPage = () => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -43,6 +44,11 @@ const AuthPage = () => {
             {isSignUp ? "Sign Up" : "Login"}
           </button>
         </form>
+
+        <div className="my-4 text-center">
+          <p className="text-gray-400">or</p>
+          <GoogleSignIn />
+        </div>
 
         <p className="text-center mt-4">
           {isSignUp ? "Already have an account?" : "Don't have an account?"}
