@@ -1,21 +1,7 @@
 import React from 'react';
-import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { auth } from '../config/firebase';
 
-// Your Firebase config
-const firebaseConfig = {
-    apiKey: "AIzaSyACe2lFnmz9GUtTDFHcQzLF1ohNcZTVunY",
-    authDomain: "fitness-app-ef92f.firebaseapp.com",
-    projectId: "fitness-app-ef92f",
-    storageBucket: "fitness-app-ef92f.appspot.com",
-    messagingSenderId: "841289850243",
-    appId: "1:841289850243:web:a4973a002ea1aed759aab6",
-    measurementId: "G-MHPZCEHRST"
-};
-
-// Initialize Firebase app only once
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 const GoogleSignIn = ({ onSignInSuccess, onSignInError }) => {
@@ -25,12 +11,12 @@ const GoogleSignIn = ({ onSignInSuccess, onSignInError }) => {
             const user = result.user;
             console.log('Signed in user:', user);
             if (onSignInSuccess) {
-                onSignInSuccess(user); // Pass user info to parent component if needed
+                onSignInSuccess(user);
             }
         } catch (error) {
             console.error('Error during sign-in:', error);
             if (onSignInError) {
-                onSignInError(error); // Pass error to parent component if needed
+                onSignInError(error);
             }
         }
     };
